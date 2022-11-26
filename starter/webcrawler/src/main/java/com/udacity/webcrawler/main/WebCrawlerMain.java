@@ -11,7 +11,6 @@ import com.udacity.webcrawler.profiler.Profiler;
 import com.udacity.webcrawler.profiler.ProfilerModule;
 
 import javax.inject.Inject;
-import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.file.Path;
 import java.util.Objects;
@@ -39,9 +38,8 @@ public final class WebCrawlerMain {
     if (!config.getResultPath().isEmpty()) {
       resultWriter.write(Path.of(config.getResultPath()));
     } else {
-      System.out.println("Made it");
-      FileOutputStream fileObj = new FileOutputStream(config.getResultPath());
-      OutputStreamWriter output = new OutputStreamWriter (fileObj);
+//      FileOutputStream fileObj = new FileOutputStream(config.getResultPath());
+      OutputStreamWriter output = new OutputStreamWriter (System.out);
       resultWriter.write(output);
     }
 
